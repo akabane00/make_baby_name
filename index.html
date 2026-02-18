@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎀 조카 이름 짓기 프로젝트</title>
+
+  <!-- KakaoTalk / SNS 미리보기 -->
+  <meta property="og:title" content="🎀 조카 이름 짓기 프로젝트">
+  <meta property="og:description" content="2026년 병오년생 여아 · 성씨 박 — 유니크하고 아름다운 이름을 찾는 여정">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://em-content.zobj.net/source/apple/391/ribbon_1f380.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FFF8F0;
+      --warm-bg: #FEF6EE;
+      --blush: #F2D1C9;
+      --rose: #D4727E;
+      --deep-rose: #B5485A;
+      --gold: #C4975A;
+      --dark-gold: #8B6914;
+      --charcoal: #2D2926;
+      --warm-gray: #6B5E57;
+      --light-gray: #E8DDD5;
+      --mint: #B8D8D0;
+      --soft-blue: #C5D5E4;
+      --rank-gold: #D4A44C;
+      --rank-silver: #A0A0A0;
+      --rank-bronze: #CD7F32;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.8;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(170deg, #FEF0E8 0%, #FFF8F0 40%, #F5EDE6 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 80vw;
+      height: 80vw;
+      background: radial-gradient(circle, rgba(242,209,201,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -20%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(184,216,208,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 25s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(2deg); }
+      66% { transform: translate(-20px, 20px) rotate(-1deg); }
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-ribbon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: gentle-bounce 3s ease-in-out infinite;
+    }
+
+    @keyframes gentle-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero h1 {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      color: var(--warm-gray);
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-tag {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--light-gray);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+      font-weight: 500;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      animation: scroll-bounce 2s ease-in-out infinite;
+      color: var(--blush);
+      font-size: 1.5rem;
+    }
+
+    @keyframes scroll-bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      50% { transform: translateX(-50%) translateY(10px); opacity: 0.5; }
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+    }
+
+    .section-line {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1rem auto 0;
+    }
+
+    /* ===== CRITERIA ===== */
+    .criteria-section {
+      background: linear-gradient(180deg, var(--cream) 0%, #F5EDE6 100%);
+    }
+
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .criteria-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--light-gray);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .criteria-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(45,41,38,0.08);
+    }
+
+    .criteria-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+
+    .criteria-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      color: var(--charcoal);
+    }
+
+    .criteria-desc {
+      font-size: 0.8rem;
+      color: var(--warm-gray);
+      line-height: 1.6;
+    }
+
+    /* ===== NAME CARDS ===== */
+    .name-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--light-gray);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .name-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 60px rgba(45,41,38,0.08);
+    }
+
+    .name-card.gold { border-top: 4px solid var(--rank-gold); }
+    .name-card.silver { border-top: 4px solid var(--rank-silver); }
+    .name-card.bronze { border-top: 4px solid var(--rank-bronze); }
+
+    .rank-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .name-card .hanja-display {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 900;
+      color: var(--charcoal);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.2rem;
+    }
+
+    .name-card .hanja-small {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.3em;
+      margin-bottom: 1rem;
+    }
+
+    .name-card .score-badge {
+      display: inline-block;
+      background: var(--charcoal);
+      color: #fff;
+      padding: 0.3rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .meaning-box {
+      background: var(--warm-bg);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--gold);
+    }
+
+    .meaning-box .char-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .meaning-box .char-row:last-child { margin-bottom: 0; }
+
+    .char-hanja {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .char-meaning {
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+    }
+
+    .quote-text {
+      font-family: 'Noto Serif KR', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--deep-rose);
+      text-align: center;
+      margin: 1.2rem 0;
+      padding: 0 1rem;
+    }
+
+    /* Score Grid */
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .score-item {
+      background: var(--warm-bg);
+      border-radius: 10px;
+      padding: 0.8rem;
+      text-align: center;
+    }
+
+    .score-item .label {
+      font-size: 0.7rem;
+      color: var(--warm-gray);
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+    }
+
+    .score-item .value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .score-item .value.perfect { color: var(--rank-gold); }
+
+    /* Suri Table */
+    .suri-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .suri-table th {
+      background: var(--charcoal);
+      color: #fff;
+      padding: 0.6rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .suri-table th:first-child { border-radius: 8px 0 0 0; }
+    .suri-table th:last-child { border-radius: 0 8px 0 0; }
+
+    .suri-table td {
+      padding: 0.6rem;
+      border-bottom: 1px solid var(--light-gray);
+      text-align: center;
+    }
+
+    .suri-table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+    .suri-table tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+
+    .badge-good {
+      background: #E8F5E9;
+      color: #2E7D32;
+      padding: 0.15rem 0.6rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .badge-bad {
+      background: #FFEBEE;
+      color: #C62828;
+      padding: 0.15rem 0.6rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* Nickname */
+    .nickname-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .nickname-tag {
+      background: var(--blush);
+      color: var(--deep-rose);
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .nickname-tag.positive {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+
+    /* ===== COMPARISON ===== */
+    .comparison-section {
+      background: linear-gradient(180deg, #F5EDE6 0%, var(--cream) 100%);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.82rem;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(45,41,38,0.06);
+    }
+
+    .compare-table th {
+      background: var(--charcoal);
+      color: #fff;
+      padding: 0.8rem 0.6rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .compare-table td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid var(--light-gray);
+      text-align: center;
+    }
+
+    .compare-table tbody tr:last-child td { border-bottom: none; }
+
+    .compare-table tbody tr:hover { background: var(--warm-bg); }
+
+    .compare-table td:first-child {
+      font-weight: 500;
+      text-align: left;
+      padding-left: 1rem;
+    }
+
+    .highlight-cell {
+      font-weight: 700;
+      color: var(--rank-gold);
+    }
+
+    /* ===== ELIMINATED ===== */
+    .eliminated-list {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .eliminated-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--light-gray);
+    }
+
+    .eliminated-name {
+      font-family: 'Noto Serif KR', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      min-width: 65px;
+      color: var(--warm-gray);
+      text-decoration: line-through;
+      text-decoration-color: var(--rose);
+    }
+
+    .eliminated-reason {
+      font-size: 0.82rem;
+      color: var(--warm-gray);
+    }
+
+    /* ===== CONCLUSION ===== */
+    .conclusion-section {
+      background: linear-gradient(170deg, var(--charcoal) 0%, #3D3530 100%);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 0;
+    }
+
+    .conclusion-section .section-title { color: #fff; }
+    .conclusion-section .section-number { color: var(--gold); }
+    .conclusion-section .section-line { background: var(--gold); }
+
+    .conclusion-winner {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin: 2rem 0 0.5rem;
+      text-shadow: 0 2px 20px rgba(196,151,90,0.3);
+    }
+
+    .conclusion-hanja {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.4em;
+      margin-bottom: 2rem;
+    }
+
+    .conclusion-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 2;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .conclusion-runners {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .runner-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      min-width: 200px;
+    }
+
+    .runner-rank {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .runner-name {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .runner-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.3rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--warm-gray);
+      font-size: 0.75rem;
+      line-height: 1.8;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 600px) {
+      .name-card { padding: 1.8rem 1.2rem; }
+      .score-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-meta { gap: 0.8rem; }
+      .hero-tag { font-size: 0.78rem; padding: 0.4rem 0.9rem; }
+      .suri-table { font-size: 0.72rem; }
+      .compare-table { font-size: 0.72rem; }
+      .compare-table td, .compare-table th { padding: 0.5rem 0.3rem; }
+      .conclusion-runners { gap: 1rem; }
+      .runner-item { min-width: 160px; padding: 1rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-ribbon">🎀</div>
+      <h1>조카 이름 짓기 프로젝트</h1>
+      <p class="hero-sub">유니크하고, 발음하기 쉽고, 한자 뜻이 아름다운<br>단 하나의 이름을 찾는 여정</p>
+      <div class="hero-meta">
+        <span class="hero-tag">🗓 2026년 병오(丙午)년생</span>
+        <span class="hero-tag">👶 여아</span>
+        <span class="hero-tag">姓 박(朴)</span>
+      </div>
+    </div>
+    <div class="scroll-hint">↓</div>
+  </section>
+
+  <!-- CRITERIA -->
+  <section class="criteria-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-number">Selection Criteria</span>
+        <h2 class="section-title">선정 기준</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="criteria-grid">
+        <div class="criteria-card fade-in">
+          <div class="criteria-icon">🔤</div>
+          <div class="criteria-label">발음</div>
+          <div class="criteria-desc">박(ㅂ) 뒤에 자연스럽게 이어지고, 전화·카페에서 오인 없는 또렷한 이름</div>
+        </div>
+        <div class="criteria-card fade-in">
+          <div class="criteria-icon">🌟</div>
+          <div class="criteria-label">유니크</div>
+          <div class="criteria-desc">출생신고 통계 기준 희귀하고, 동명 유명인이 없는 이름</div>
+        </div>
+        <div class="criteria-card fade-in">
+          <div class="criteria-icon">📖</div>
+          <div class="criteria-label">한자</div>
+          <div class="criteria-desc">의미가 깊고 격조 있는 인명용 한자 조합</div>
+        </div>
+        <div class="criteria-card fade-in">
+          <div class="criteria-icon">🛡</div>
+          <div class="criteria-label">온라인 검증</div>
+          <div class="criteria-desc">커뮤니티 밈·놀림 소재가 없는 클린한 이름</div>
+        </div>
+        <div class="criteria-card fade-in">
+          <div class="criteria-icon">🔢</div>
+          <div class="criteria-label">수리 길흉</div>
+          <div class="criteria-desc">81수리 성명학 4격 분석</div>
+        </div>
+        <div class="criteria-card fade-in">
+          <div class="criteria-icon">☯️</div>
+          <div class="criteria-label">오행 밸런스</div>
+          <div class="criteria-desc">木·火·土·金·水 상생 흐름</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP 3 -->
+  <section>
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-number">Final Top 3</span>
+        <h2 class="section-title">최종 TOP 3</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- 1위: 박세랑 -->
+      <div class="name-card gold fade-in">
+        <div class="rank-badge">🥇</div>
+        <div class="hanja-display">박세랑</div>
+        <div class="hanja-small">朴 世 朗</div>
+        <span class="score-badge">총점 64 / 70</span>
+
+        <div class="meaning-box">
+          <div class="char-row">
+            <span class="char-hanja">世</span>
+            <span class="char-meaning">세상 세 — 세상, 시대, 세대</span>
+          </div>
+          <div class="char-row">
+            <span class="char-hanja">朗</span>
+            <span class="char-meaning">밝을 랑 — 맑고 밝음, 쾌활함</span>
+          </div>
+        </div>
+
+        <p class="quote-text">"세상을 밝게 비추는 사람"</p>
+
+        <div class="score-grid">
+          <div class="score-item">
+            <div class="label">한자 의미</div>
+            <div class="value">8</div>
+          </div>
+          <div class="score-item">
+            <div class="label">발음 편의</div>
+            <div class="value">9</div>
+          </div>
+          <div class="score-item">
+            <div class="label">유니크함</div>
+            <div class="value perfect">10</div>
+          </div>
+          <div class="score-item">
+            <div class="label">수리 길흉</div>
+            <div class="value perfect">10</div>
+          </div>
+          <div class="score-item">
+            <div class="label">오행</div>
+            <div class="value">8</div>
+          </div>
+          <div class="score-item">
+            <div class="label">별명 안전</div>
+            <div class="value perfect">10</div>
+          </div>
+          <div class="score-item">
+            <div class="label">국제 활용</div>
+            <div class="value">9</div>
+          </div>
+        </div>
+
+        <table class="suri-table">
+          <thead>
+            <tr><th>격</th><th>계산</th><th>획수</th><th>길흉</th><th>해설</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>원격 (초년)</td><td>世+朗</td><td>15</td><td><span class="badge-good">大吉</span></td><td>덕망·복록</td></tr>
+            <tr><td>형격 (청년)</td><td>朴+世</td><td>11</td><td><span class="badge-good">大吉</span></td><td>부귀영화</td></tr>
+            <tr><td>이격 (장년)</td><td>朴+朗</td><td>16</td><td><span class="badge-good">大吉</span></td><td>지혜·덕</td></tr>
+            <tr><td>정격 (말년)</td><td>총합</td><td>21</td><td><span class="badge-good">大吉</span></td><td>명성·성공</td></tr>
+          </tbody>
+        </table>
+
+        <div style="font-size:0.82rem; color:var(--warm-gray);">
+          <strong>출생신고:</strong> 91명 (초희귀) &nbsp;·&nbsp;
+          <strong>영어:</strong> Se-rang &nbsp;·&nbsp;
+          <strong>동명 유명인:</strong> 0명
+        </div>
+
+        <div class="nickname-row">
+          <span class="nickname-tag">세랑이</span>
+          <span class="nickname-tag">랑이</span>
+          <span class="nickname-tag">세세</span>
+          <span class="nickname-tag positive">사랑이~ ♡</span>
+        </div>
+      </div>
+
+      <!-- 2위: 박소안 -->
+      <div class="name-card silver fade-in">
+        <div class="rank-badge">🥈</div>
+        <div class="hanja-display">박소안</div>
+        <div class="hanja-small">朴 昭 安</div>
+        <span class="score-badge">총점 63 / 70</span>
+
+        <div class="meaning-box">
+          <div class="char-row">
+            <span class="char-hanja">昭</span>
+            <span class="char-meaning">밝을 소 — 빛나다, 드러나다</span>
+          </div>
+          <div class="char-row">
+            <span class="char-hanja">安</span>
+            <span class="char-meaning">편안할 안 — 평화, 안정, 무탈</span>
+          </div>
+        </div>
+
+        <p class="quote-text">"밝게 빛나되 평안한 삶을 사는 사람"</p>
+
+        <div class="score-grid">
+          <div class="score-item">
+            <div class="label">한자 의미</div>
+            <div class="value">9</div>
+          </div>
+          <div class="score-item">
+            <div class="label">발음 편의</div>
+            <div class="value">9</div>
+          </div>
+          <div class="score-item">
+            <div class="label">유니크함</div>
+            <div class="value">9</div>
+          </div>
+          <div class="score-item">
+            <div class="label">수리 길흉</div>
+            <div class="value">8</div>
+          </div>
+          <div class="score-item">
+            <div class="label">오행</div>
+            <div class="value perfect">10</div>
+          </div>
+          <div class="score-item">
+            <div class="label">별명 안전</div>
+            <div class="value">9</div>
+          </div>
+          <div class="score-item">
+            <div class="label">국제 활용</div>
+            <div class="value">9</div>
+          </div>
+        </div>
+
+        <table class="suri-table">
+          <thead>
+            <tr><th>격</th><th>계산</th><th>획수</th><th>길흉</th><th>해설</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>원격 (초년)</td><td>昭+安</td><td>15</td><td><span class="badge-good">大吉</span></td><td>덕망·복록</td></tr>
+            <tr><td>형격 (청년)</td><td>朴+昭</td><td>15</td><td><span class="badge-good">大吉</span></td><td>덕망·복록</td></tr>
+            <tr><td>이격 (장년)</td><td>朴+安</td><td>12</td><td><span class="badge-bad">凶</span></td><td>의지박약</td></tr>
+            <tr><td>정격 (말년)</td><td>총합</td><td>21</td><td><span class="badge-good">大吉</span></td><td>명성·성공</td></tr>
+          </tbody>
+        </table>
+
+        <div style="font-size:0.82rem; color:var(--warm-gray);">
+          <strong>오행:</strong> 木→火→土 완벽 상생 &nbsp;·&nbsp;
+          <strong>영어:</strong> So-an &nbsp;·&nbsp;
+          <strong>동명 유명인:</strong> 0명
+        </div>
+
+        <div class="nickname-row">
+          <span class="nickname-tag">소안이</span>
+          <span class="nickname-tag">안이</span>
+          <span class="nickname-tag">소소</span>
+        </div>
+      </div>
+
+      <!-- 3위: 박하령 -->
+      <div class="name-card bronze fade-in">
+        <div class="rank-badge">🥉</div>
+        <div class="hanja-display">박하령</div>
+        <div class="hanja-small">朴 夏 玲</div>
+        <span class="score-badge">총점 56 / 70</span>
+
+        <div class="meaning-box">
+          <div class="char-row">
+            <span class="char-hanja">夏</span>
+            <span class="char-meaning">여름 하 — 생명력, 활기, 성장</span>
+          </div>
+          <div class="char-row">
+            <span class="char-hanja">玲</span>
+            <span class="char-meaning">옥소리 령 — 맑고 영롱한 울림</span>
+          </div>
+        </div>
+
+        <p class="quote-text">"여름날 옥구슬이 부딪히는 맑은 소리"</p>
+
+        <div class="score-grid">
+          <div class="score-item">
+            <div class="label">한자 의미</div>
+            <div class="value">9</div>
+          </div>
+          <div class="score-item">
+            <div class="label">발음 편의</div>
+            <div class="value">8</div>
+          </div>
+          <div class="score-item">
+            <div class="label">유니크함</div>
+            <div class="value">9</div>
+          </div>
+          <div class="score-item">
+            <div class="label">수리 길흉</div>
+            <div class="value">7</div>
+          </div>
+          <div class="score-item">
+            <div class="label">오행</div>
+            <div class="value">7</div>
+          </div>
+          <div class="score-item">
+            <div class="label">별명 안전</div>
+            <div class="value">9</div>
+          </div>
+          <div class="score-item">
+            <div class="label">국제 활용</div>
+            <div class="value">7</div>
+          </div>
+        </div>
+
+        <table class="suri-table">
+          <thead>
+            <tr><th>격</th><th>계산</th><th>획수</th><th>길흉</th><th>해설</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>원격 (초년)</td><td>夏+玲</td><td>19</td><td><span class="badge-bad">凶</span></td><td>고난·역경</td></tr>
+            <tr><td>형격 (청년)</td><td>朴+夏</td><td>16</td><td><span class="badge-good">大吉</span></td><td>지혜·덕</td></tr>
+            <tr><td>이격 (장년)</td><td>朴+玲</td><td>15</td><td><span class="badge-good">大吉</span></td><td>덕망·복록</td></tr>
+            <tr><td>정격 (말년)</td><td>총합</td><td>25</td><td><span class="badge-good">吉</span></td><td>재능·성공</td></tr>
+          </tbody>
+        </table>
+
+        <div style="font-size:0.82rem; color:var(--warm-gray);">
+          <strong>출생신고:</strong> 486명 (희귀) &nbsp;·&nbsp;
+          <strong>영어:</strong> Ha-ryung &nbsp;·&nbsp;
+          <strong>동명 유명인:</strong> 0명
+        </div>
+
+        <div class="nickname-row">
+          <span class="nickname-tag">하령이</span>
+          <span class="nickname-tag">령이</span>
+          <span class="nickname-tag">하링</span>
+          <span class="nickname-tag positive">박하맛 아이 🍃</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="comparison-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-number">Comparison</span>
+        <h2 class="section-title">최종 비교</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="fade-in">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th>🥇 박세랑</th>
+              <th>🥈 박소안</th>
+              <th>🥉 박하령</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>출생신고 수</td><td class="highlight-cell">91명</td><td>~100명</td><td>486명</td></tr>
+            <tr><td>수리 길수</td><td class="highlight-cell">4/4 ✨</td><td>3/4</td><td>3/4</td></tr>
+            <tr><td>오행 상생</td><td>○</td><td class="highlight-cell">◎ 완벽</td><td>△</td></tr>
+            <tr><td>온라인 리스크</td><td>클린 ✅</td><td>클린 ✅</td><td>클린 ✅</td></tr>
+            <tr><td>동명 유명인</td><td>0명</td><td>0명</td><td>0명</td></tr>
+            <tr><td>영어 표기</td><td>Se-rang</td><td class="highlight-cell">So-an</td><td>Ha-ryung</td></tr>
+            <tr><td>이미지</td><td>밝고 당당한 리더</td><td>차분한 전문가</td><td>화사한 아티스트</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIMINATED -->
+  <section>
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-number">Eliminated</span>
+        <h2 class="section-title">탈락 후보</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="eliminated-list fade-in">
+        <div class="eliminated-item">
+          <span class="eliminated-name">박이안</span>
+          <span class="eliminated-reason">동명 아이돌 멤버 존재</span>
+        </div>
+        <div class="eliminated-item">
+          <span class="eliminated-name">박유란</span>
+          <span class="eliminated-reason">디시인사이드 철권갤 "박유란" 밈 존재</span>
+        </div>
+        <div class="eliminated-item">
+          <span class="eliminated-name">박나율</span>
+          <span class="eliminated-reason">출생신고 3,895명 → 유니크하지 않음</span>
+        </div>
+        <div class="eliminated-item">
+          <span class="eliminated-name">박소현</span>
+          <span class="eliminated-reason">출생신고 5,202명 + 동명 유명인 다수</span>
+        </div>
+        <div class="eliminated-item">
+          <span class="eliminated-name">박하연</span>
+          <span class="eliminated-reason">tripleS 멤버 정하연 활동 중</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="conclusion-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">Final Recommendation</span>
+        <h2 class="section-title">최종 추천</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="conclusion-winner">박세랑</div>
+      <div class="conclusion-hanja">朴 世 朗</div>
+      <p class="conclusion-desc">
+        수리 4격 전부 길수 · 전국 91명 초희귀<br>
+        온라인 완전 클린 · "사랑" 연상 긍정 별명<br>
+        <em>세상을 밝게 비추는 아이</em>
+      </p>
+
+      <div class="conclusion-runners">
+        <div class="runner-item">
+          <div class="runner-rank">2순위</div>
+          <div class="runner-name">박소안</div>
+          <div class="runner-note">오행 완벽 상생 · 글로벌 최적</div>
+        </div>
+        <div class="runner-item">
+          <div class="runner-rank">3순위</div>
+          <div class="runner-name">박하령</div>
+          <div class="runner-note">한자 의미 가장 아름다움</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      출생신고 통계: baby-name.kr (2008~2025) · 수리: 81수리 성명학 · 온라인 검증: 2026.02 기준<br>
+      본 문서는 참고용이며, 최종 결정은 가족과 상의하여 결정하시기 바랍니다<br>
+      <br>
+      2026년 2월 · AI(Claude) 분석 기반
+    </p>
+  </footer>
+
+  <!-- Scroll Animation -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
